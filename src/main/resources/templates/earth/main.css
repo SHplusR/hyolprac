@@ -1,5 +1,12 @@
-.test{
-
-    letter-spacing: 10px;
-    font-size: 200%;
+.title{
+    font-style: oblique;
+    letter-spacing: 30px;
+    font-size: 90px;
+    text-align: center;
+    font-weight: bold;
+}
+.denouement{
+    font-style: oblique;
+    font-size: 50px;
+    font-weight: bold;
 }

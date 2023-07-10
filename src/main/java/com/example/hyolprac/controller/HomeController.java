@@ -11,4 +11,14 @@ public class HomeController {
     public void main(){
         System.out.println("main page");
     }
+    @GetMapping("/login")
+    public void login(){
+
+    }
+
+    @GetMapping("/signup")
+    public void signup(){
+
+    }
+
 }
