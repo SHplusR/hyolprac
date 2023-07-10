@@ -1,2 +1,14 @@
-package com.example.hyolprac.controller;public class HomeController {
+package com.example.hyolprac.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/earth")
+public class HomeController {
+    @GetMapping("/main")
+    public void main(){
+        System.out.println("main page");
+    }
 }
