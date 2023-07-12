@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body style="background-color: cornflowerblue">
+<p class="minititle">signup</p>
+<form action="/earth/board" method="get" enctype="multipart/form-data">
+    lastname: <input type="text" name="lastname"> <br>
+    firstname: <input type="text" name="firstname"> <br>
+    species: <select name="species" id="species">
+    <option label="planet">
+    <option value="planet-12Aq">planet 12Aq</option>
+    <option value="planet-dXlk">planet dXlk</option>
+    <option value="planet-Y((m">planet Y((m</option>
+    <option value="planet-g79C">planet g79C</option>
+    <option value="planet-qufs=">planet qufs=</option>
+    <option value="planet-BC89">planet BC89</option>
+    <option value="planet-c8jh">planet c8jh</option>
+    <option value="planet-m6F4">planet m6F4</option>
+    <option value="planet-q1d">planet q1d</option>
+    <option value="etc">etc</option>
+    </option>
+</select>
+    <br>
+    id: <input type="text" name="id" maxlength="41"> <button>duplication check</button><br>
+    pwd: <input type="text" name="id" maxlength="16"> <br>
+    birth:  <input type="datetime-local" name="birth" title="birth"> <br>
+    file: <input type="file" name="profile" multiple> <br>
+
+</form>
+
+<input type="submit" value="done">
 
 </body>
 </html>
