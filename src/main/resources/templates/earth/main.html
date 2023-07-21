@@ -1,96 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
-    <th:block th:fragment="content">
-        <h1 class="mt-4">Guestbook Modify Page</h1>
 
-        <form action="/board/modify" method="post">
+        <h1>지 구 침 략 계 획</h1>
 
-            <input type="hidden" name="page" th:value="${requestDTO.page}">
-            <input type="hidden" name="type" th:value="${requestDTO.type}" >
-            <input type="hidden" name="keyword" th:value="${requestDTO.keyword}" >
+        <form action="/earth/main" method="get" id="form">
+        <body style="background-color: cornflowerblue">
 
-            <div class="form-group">
-                <label >Bno</label>
-                <input type="text" class="form-control" name="bno" th:value="${dto.bno}" readonly >
-            </div>
+        <a th:href="@{/earth/login}">
+                <button type="button" class="btn btn-outline-primary">login
+                </button>
+        </a>
+        <a th:href="@{/earth/signup}">
+                <button type="button" class="btn btn-outline-primary">sign up
+                </button>
+        </a>
+        <a th:href="@{/earth/go to board}">
+                <button type="button" class="btn btn-outline-primary">board
+                </button>
+        </a>
 
-            <div class="form-group">
-                <label >Title</label>>
-                <input type="text" class="form-control" name="title" th:value="${dto.title}" >
-            </div>
-            <div class="form-group">
-                <label >Content</label>
-                <textarea class="form-control" rows="5" name="content">[[${dto.content}]]</textarea>
-            </div>
-            <div class="form-group">
-                <label >Writer</label>
-                <input type="text" class="form-control" name="writer" th:value="${dto.writerName}" readonly>
-            </div>
-            <div class="form-group">
-                <label >RegDate</label>
-                <input type="text" class="form-control" th:value="${#temporals.format(dto.regDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
-            </div>
-
-            <div class="form-group">
-                <label >ModDate</label>
-                <input type="text" class="form-control" th:value="${#temporals.format(dto.modDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
-            </div>
-
+        </body>
         </form>
 
-        <button type="button" class="btn btn-primary joinBtn">join us</button>
-        <button type="button" class="btn btn-info loginBtn">login</button>
-        <button type="button" class="btn btn-danger boardBtn">go to board</button>
-
-
         <script th:inline="javascript">
-            var actionForm = $("form");
-
-
-            $(".boardBtn").click(function(){
-
-                actionForm
-                    .attr("action", "/earth/board")
-                    .attr("method","get");
-
-                actionForm.submit();
-
-            });
-
-            $(".modifyBtn").click(function() {
-
-                if(!confirm("수정하시겠습니까?")){
-                    return ;
-                }
-
-                actionForm
-                    .attr("action", "/board/modify")
-                    .attr("method","post")
-                    .submit();
-            });
-
-            $(".listBtn").click(function (){
-                //var pageInfo = $("input[name='page']");
-                var page = $("input[name='page']");
-                var type = $("input[name='type']");
-                var keyword = $("input[name='keyword']");
-
-                actionForm.empty();
-
-                actionForm.append(page);
-                actionForm.append(type);
-                actionForm.append(keyword);
-
-                actionForm.attr("action","/board/list")
-                    .attr("method","get");
-
-                actionForm.submit();
-            });
+            // var actionForm = $("$form");
+            // $(".joinBtn").click(function(){
+            //
+            //     actionForm
+            //         .attr("action", "/earth/signup")
+            //         .attr("method","get");
+            //
+            //     actionForm.submit();
+            //
+            // });
+            //
+            // $(".loginBtn").click(function(){
+            //
+            //         actionForm
+            //                 .attr("action", "/earth/login")
+            //                 .attr("method","get");
+            //
+            //         actionForm.submit();
+            //
+            // });
+            //
+            // $(".listBtn").click(function (){
+            //     //var pageInfo = $("input[name='page']");
+            //     var page = $("input[name='page']");
+            //     var type = $("input[name='type']");
+            //     var keyword = $("input[name='keyword']");
+            //
+            //     actionForm.empty();
+            //
+            //     actionForm.append(page);
+            //     actionForm.append(type);
+            //     actionForm.append(keyword);
+            //
+            //     actionForm.attr("action","/board/list")
+            //         .attr("method","get");
+            //
+            //     actionForm.submit();
+            // });
 
         </script>
-
-    </th:block>
-</th:block>
 
 </html>

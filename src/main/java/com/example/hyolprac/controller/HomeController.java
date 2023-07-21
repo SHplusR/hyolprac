@@ -1,17 +1,24 @@
 package com.example.hyolprac.controller;
 
+import com.example.hyolprac.dto.MemberDTO;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@Log4j2
 @RequestMapping("/earth")
+@RequiredArgsConstructor
 public class HomeController {
     @GetMapping("/main")
     public void main(){
         System.out.println("main page");
+    }
+    @PostMapping("/main")
+    public void mainPost(MemberDTO dto){
+      log.info("dto : "+dto);
+
     }
     @GetMapping("/login")
     public void login(){
@@ -22,6 +29,10 @@ public class HomeController {
         System.out.println("signup page");
     }
 
+    @PostMapping("/signup")
+    public void signupPost(MemberDTO dto){
+        log.info("dto : "+ dto);
+    }
 @GetMapping("/board")
 public void board(){
     System.out.println("get board");

@@ -7,7 +7,8 @@
 </head>
 <body style="background-color: cornflowerblue">
 <p class="minititle">signup</p>
-<form action="/earth/board" method="get" enctype="multipart/form-data">
+
+<form action="/earth/main" method="post" enctype="multipart/form-data">
     lastname: <input type="text" name="lastname"> <br>
     firstname: <input type="text" name="firstname"> <br>
     species: <select name="species" id="species">
@@ -28,11 +29,11 @@
     id: <input type="text" name="id" maxlength="41"> <button>duplication check</button><br>
     pwd: <input type="text" name="id" maxlength="16"> <br>
     birth:  <input type="datetime-local" name="birth" title="birth"> <br>
-    file: <input type="file" name="profile" multiple> <br>
-
+<!--    file: <input type="file" name="profile" multiple> <br>-->
+    <input type="submit" value="done">
 </form>
 
-<input type="submit" value="done">
+
 
 </body>
 </html>
