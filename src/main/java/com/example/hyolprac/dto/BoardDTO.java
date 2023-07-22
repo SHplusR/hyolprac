@@ -12,11 +12,12 @@ import java.time.LocalDateTime;
 public class BoardDTO {
 
     private Long bno;
+    private String id;
     private String title;
     private String content;
-    private String writerName;
     private LocalDateTime regDate;
     private LocalDateTime modDate;
     private int replyCount;
+    private int recommend;
 }
 
