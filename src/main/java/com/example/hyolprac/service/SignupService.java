@@ -6,8 +6,17 @@ import com.example.hyolprac.entity.Member;
 public interface SignupService  {
 
     default Member dtoToEntity(MemberDTO dto){
-//        Member member = Member.builder().email(dto.getWriterEmail()).build();
-        Member member = Member.builder().mno(dto.getMno()).build();
-        return member;
+       Member member = Member.builder()
+               .mno(dto.getMno())
+               .lastname(dto.getLastname())
+               .firstname(dto.getFirstname())
+               .species(dto.getSpecies())
+               .id(dto.getId())
+               .pwd(dto.getPwd())
+               .birth(dto.getBirth())
+               .build();
+       return member;
     }
+
+    void signup(MemberDTO dto);
 }

@@ -1,25 +1,32 @@
 package com.example.hyolprac.controller;
 
 import com.example.hyolprac.dto.MemberDTO;
+import com.example.hyolprac.service.SignupService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @Log4j2
 @RequestMapping("/earth")
 @RequiredArgsConstructor
 public class HomeController {
+    private final SignupService signupService;
     @GetMapping("/main")
     public void main(){
         System.out.println("main page");
     }
-    @PostMapping("/main")
-    public void mainPost(MemberDTO dto){
-      log.info("dto : "+dto);
 
+    @PostMapping("/main")
+    public String mainPost(MemberDTO dto, RedirectAttributes redirectAttributes){
+      log.info("dto : "+dto);
+      signupService.signup(dto);
+      redirectAttributes.addFlashAttribute("msg",dto.getMno());
+      return "redirect:/earth/board";
     }
+
     @GetMapping("/login")
     public void login(){
         System.out.println("login page");

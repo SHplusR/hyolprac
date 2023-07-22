@@ -10,29 +10,18 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @ToString
-public class Board extends BaseEntity{
-
+public class Reply extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int bno;
-
-    private String id;
-
+    private int rno;
     private String content;
-    private String title;
-    private int recommend;
-
-    private int replyCount;
+    @ManyToOne(cascade = {CascadeType.ALL})
+    private Board board;
 
     @ManyToOne(cascade = {CascadeType.ALL})
-    private Member writer;
+    private Member replyer;
 
-    public void changeTitle(String title){
-        this.title = title;
-    }
     public void changeContent(String content){
         this.content = content;
     }
-
 }
-
