@@ -8,6 +8,8 @@ spring:
     url: jdbc:mysql://localhost:3306/hyolex?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: user
     password: user
+    tomcat:
+      driver-class-name:
   thymeleaf:
     cache: false
 
@@ -17,4 +19,4 @@ spring:
     open-in-view: false
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update

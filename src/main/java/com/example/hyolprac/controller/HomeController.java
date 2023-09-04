@@ -40,9 +40,12 @@ public class HomeController {
     public void signupPost(MemberDTO dto){
         log.info("dto : "+ dto);
     }
+
 @GetMapping("/board")
 public void board(){
-    System.out.println("get board");
+
+        System.out.println("get board");
+
 }
     @PostMapping("/board")
     public void postBoard(){
