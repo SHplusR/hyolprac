@@ -41,9 +41,20 @@ public class HomeController {
         log.info("dto : "+ dto);
     }
 
+    @PostMapping("/id-check")
+    public @ResponseBody String idCheck(@RequestParam("MemberId") String id){
+        System.out.println("MemberId : " + id);
+        final String result = signupService.idCheck(id);
+        if(result !=null){
+            return "success";
+        }
+        else{
+            return "fail";
+        }
+
+    }
 @GetMapping("/board")
 public void board(){
-
         System.out.println("get board");
 
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: cornflowerblue">
 <p class="minititle">signup</p>
@@ -26,7 +26,8 @@
     </option>
 </select>
     <br>
-    id: <input type="text" name="id" maxlength="41"> <button>duplication check</button><br>
+    id: <input type="text" name="id" maxlength="41" id="MemberId" onkeyup="idCheck()"> <span id="id-check-result"></span>
+    <br>
     pwd: <input type="text" name="pwd" maxlength="16"> <br>
     birth:  <input type="datetime-local" name="birth" title="birth"> <br>
 <!--    file: <input type="file" name="profile" multiple> <br>-->
@@ -34,4 +35,39 @@
 </form>
 
 </body>
+<script th:inline="javascript">
+    const idCheck = () => {
+        const id = document.getElementById("MemberId").value;
+        const idCheckResult = document.getElementById("id-check-result");
+        console.log("id : ",id);
+        $.ajax({
+            type:"post",
+            url:"id-check",
+            data : {
+                "MemberId" : id
+            },
+            success : function (result){
+                console.log("요청성공 : ",result);
+                if(result == "success"){
+                    console.log("possible ID");
+                    idCheckResult.style.color="green";
+                    idCheckResult.style.fontSize="20";
+                    idCheckResult.innerHTML = "possible ID";
+                }
+                else{
+                    console.log("impossible ID");
+                    idCheckResult.style.color="red";
+                    idCheckResult.style.fontSize="20";
+                    idCheckResult.innerHTML = "impossible ID";
+                }
+            },
+            error :function (err){
+                console.log("err : ",err)
+            }
+        });
+    }
+</script>
 </html>
+
+
+

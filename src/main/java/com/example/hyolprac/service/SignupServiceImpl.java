@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @Log4j2
 @RequiredArgsConstructor
@@ -17,5 +20,18 @@ public class SignupServiceImpl implements SignupService{
         log.info(dto);
         Member member = dtoToEntity(dto);
         memberRepository.save(member);
+    }
+
+    @Override
+    public String idCheck(String id) {
+        List<Member> bymemid = memberRepository.findById(id);
+        System.out.println("optinal bymemid = "+ bymemid);
+       if(bymemid.size()>1){
+           //존재한다 그러니까 안된다!
+           return null;
+       }
+       else{
+           return "ok";
+       }
     }
 }

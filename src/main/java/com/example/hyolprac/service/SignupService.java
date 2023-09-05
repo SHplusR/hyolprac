@@ -19,4 +19,5 @@ public interface SignupService  {
     }
 
     void signup(MemberDTO dto);
+    String idCheck(String id);
 }
