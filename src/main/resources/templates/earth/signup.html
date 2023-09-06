@@ -31,7 +31,7 @@
     pwd: <input type="text" name="pwd" maxlength="16"> <br>
     birth:  <input type="datetime-local" name="birth" title="birth"> <br>
 <!--    file: <input type="file" name="profile" multiple> <br>-->
-    <input type="submit" value="done">
+    <input type="submit" id="donebtn" disable='disabled' value="done">
 </form>
 
 </body>
@@ -39,6 +39,7 @@
     const idCheck = () => {
         const id = document.getElementById("MemberId").value;
         const idCheckResult = document.getElementById("id-check-result");
+        const signupDoneBtn = document.getElementById("donebtn");
         console.log("id : ",id);
         $.ajax({
             type:"post",
@@ -53,12 +54,14 @@
                     idCheckResult.style.color="green";
                     idCheckResult.style.fontSize="20";
                     idCheckResult.innerHTML = "possible ID";
+                    signupDoneBtn.disabled = false;
                 }
                 else{
                     console.log("impossible ID");
                     idCheckResult.style.color="red";
                     idCheckResult.style.fontSize="20";
                     idCheckResult.innerHTML = "impossible ID";
+                    signupDoneBtn.disabled = true;
                 }
             },
             error :function (err){
