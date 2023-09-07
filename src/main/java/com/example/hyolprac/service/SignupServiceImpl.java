@@ -24,14 +24,14 @@ public class SignupServiceImpl implements SignupService{
 
     @Override
     public String idCheck(String id) {
-        List<Member> bymemid = memberRepository.findById(id);
+        Optional<Member> bymemid = memberRepository.findById(id);
         System.out.println("optinal bymemid = "+ bymemid);
-       if(bymemid.size()>1){
-           //존재한다 그러니까 안된다!
-           return null;
-       }
-       else{
-           return "ok";
-       }
+        if(bymemid.isPresent()){
+            //존재한다 그러니까 안된다!
+            return null;
+        }
+        else{
+            return "ok";
+        }
     }
 }
