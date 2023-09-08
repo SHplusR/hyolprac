@@ -15,10 +15,8 @@ public class Board extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bno;
-
-    private String id;
-
     private String content;
+    private String id;
     private String title;
     private int recommend;
 

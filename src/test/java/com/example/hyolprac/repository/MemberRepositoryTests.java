@@ -23,7 +23,6 @@ public class MemberRepositoryTests {
                     .id("user"+i)
                     .pwd("1111")
                     .build();
-
             memberRepository.save(member);
         });
     }
