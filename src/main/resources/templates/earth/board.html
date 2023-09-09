@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
         <h1 th:text="${userId}+'! welcome'"></h1>
-        <form th:action="@{/earth/register}" th:method="post">
-            <button type="submit" class="btn btn-primary">register</button>
-        </form>
-
+<!--        <form th:action="@{/earth/register}" th:method="post">-->
+<!--            <button type="submit" class="btn btn-primary">register</button>-->
+<!--        </form>-->
+        <a th:href="@{/earth/register}">
+            <button>register</button>
+            </button>
+        </a>
 </html>

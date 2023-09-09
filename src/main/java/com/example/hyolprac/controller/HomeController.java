@@ -96,6 +96,5 @@ public void board(PageRequestDTO pageRequestDTO, MemberDTO memberDTO, Model mode
     }
     @PostMapping("/register")
     public void postRegister(){
-
     }
 }

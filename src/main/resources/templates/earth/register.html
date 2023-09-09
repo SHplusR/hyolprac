@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
-
-  <th:block th:fragment="content">
-
     <h1 class="mt-4">Board Register Page</h1>
 
     <form th:action="@{/earth/register}" th:method="post">
@@ -18,7 +14,3 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-  </th:block>
-
-</th:block>
