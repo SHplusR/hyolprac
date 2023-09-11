@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="main.css">
-<h1>earth invasion</h1>
+<link rel="stylesheet" href="style..css">
 </head>
-
-        <form action="/earth/main" method="get" id="form">
+<body>
+<h1> e a r t h i n v a s i o n</h1>
+</body>
+<form action="/earth/main" method="get" id="form">
         <body style="background-color: cornflowerblue">
 
         <a th:href="@{/earth/login}">
@@ -25,48 +23,6 @@
         </a>
 
         </body>
-        </form>
-
-        <script th:inline="javascript">
-            // var actionForm = $("$form");
-            // $(".joinBtn").click(function(){
-            //
-            //     actionForm
-            //         .attr("action", "/earth/signup")
-            //         .attr("method","get");
-            //
-            //     actionForm.submit();
-            //
-            // });
-            //
-            // $(".loginBtn").click(function(){
-            //
-            //         actionForm
-            //                 .attr("action", "/earth/login")
-            //                 .attr("method","get");
-            //
-            //         actionForm.submit();
-            //
-            // });
-            //
-            // $(".listBtn").click(function (){
-            //     //var pageInfo = $("input[name='page']");
-            //     var page = $("input[name='page']");
-            //     var type = $("input[name='type']");
-            //     var keyword = $("input[name='keyword']");
-            //
-            //     actionForm.empty();
-            //
-            //     actionForm.append(page);
-            //     actionForm.append(type);
-            //     actionForm.append(keyword);
-            //
-            //     actionForm.attr("action","/board/list")
-            //         .attr("method","get");
-            //
-            //     actionForm.submit();
-            // });
-
-        </script>
+</form>
 
 </html>

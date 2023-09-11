@@ -11,8 +11,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BoardDTO {
 
-    private Long bno;
+    private int bno;
     private String title;
+    private String id;
     private String content;
     private LocalDateTime regDate;
     private LocalDateTime modDate;
