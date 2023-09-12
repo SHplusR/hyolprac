@@ -12,13 +12,13 @@ public class BoardServiceTests {
 
     @Autowired
     private BoardService boardService;
-//    @Test
-//    public void testList(){
-//        PageRequestDTO pageRequestDTO = new PageRequestDTO();
-//        PageResultDTO<BoardDTO,Object[]> result = boardService.getList(pageRequestDTO);
-//
-//        for(BoardDTO boardDTO : result.getDtoList()){
-//            System.out.println(boardDTO);
-//        }
-//    }
+    @Test
+    public void testList(){
+        PageRequestDTO pageRequestDTO = new PageRequestDTO();
+        PageResultDTO<BoardDTO,Object[]> result = boardService.getList(pageRequestDTO);
+
+        for(BoardDTO boardDTO : result.getDtoList()){
+            System.out.println(boardDTO);
+        }
+    }
 }
