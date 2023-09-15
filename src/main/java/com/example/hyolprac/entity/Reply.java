@@ -15,10 +15,13 @@ public class Reply extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rno;
     private String content;
-    @ManyToOne(cascade = {CascadeType.ALL})
+
+    //여러개의 댓글이 한 게시글에 달릴 수 있으므로
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     private Board board;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    //여러개의 댓글을 한 유저가 쓸 수 있으므로
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     private Member replyer;
 
     public void changeContent(String content){

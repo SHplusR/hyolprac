@@ -22,6 +22,7 @@ public class Board extends BaseEntity{
 
     private int replyCount;
 
+    //여러개의 보드를 한 유저가 쓸 수 있으므로
     @ManyToOne(cascade = {CascadeType.ALL})
     private Member writer;
 

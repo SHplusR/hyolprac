@@ -14,11 +14,11 @@ public class BoardServiceTests {
     private BoardService boardService;
     @Test
     public void testList(){
-        PageRequestDTO pageRequestDTO = new PageRequestDTO();
-        PageResultDTO<BoardDTO,Object[]> result = boardService.getList(pageRequestDTO);
-
-        for(BoardDTO boardDTO : result.getDtoList()){
-            System.out.println(boardDTO);
-        }
+//        PageRequestDTO pageRequestDTO = new PageRequestDTO();
+//        PageResultDTO<BoardDTO,Object[]> result = boardService.getList(pageRequestDTO);
+//
+//        for(BoardDTO boardDTO : result.getDtoList()){
+//            System.out.println(boardDTO);
+//        }
     }
 }

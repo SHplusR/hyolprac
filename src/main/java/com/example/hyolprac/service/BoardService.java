@@ -11,7 +11,7 @@ import com.example.hyolprac.entity.Reply;
 public interface BoardService {
 
     int register(BoardDTO dto);
-    PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO);
+//    PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO);
     default Board dtoToEntity(BoardDTO dto){
         Board board = Board.builder()
                 .content(dto.getContent())

@@ -27,14 +27,14 @@ public class BoardServiceImpl implements BoardService{
         return board.getBno();
     }
 
-    @Override
-    public PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO) {
-        Function<Object[], BoardDTO> fn = (en -> entityToDto((Board)en[0],(Member)en[1]));
-        Page<Object[]> result = boardRepository.searchPage(
-                pageRequestDTO.getType(),
-                pageRequestDTO.getKeyword(),
-                pageRequestDTO.getPageable(Sort.by("bno").descending())
-        );
-                return new PageResultDTO<>(result,fn);
-    }
+//    @Override
+//    public PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO) {
+//        Function<Object[], BoardDTO> fn = (en -> entityToDto((Board)en[0],(Member)en[1]));
+//        Page<Object[]> result = boardRepository.searchPage(
+//                pageRequestDTO.getType(),
+//                pageRequestDTO.getKeyword(),
+//                pageRequestDTO.getPageable(Sort.by("bno").descending())
+//        );
+//                return new PageResultDTO<>(result,fn);
+//    }
 }
