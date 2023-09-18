@@ -2,10 +2,8 @@ package com.example.hyolprac.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Builder
@@ -23,4 +21,8 @@ public class Member extends BaseEntity {
     private String id;
     private String pwd;
     private String birth;
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    public List<Board> boardList;
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    public List<Reply> replyList;
 }
