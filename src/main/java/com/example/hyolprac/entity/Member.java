@@ -21,8 +21,8 @@ public class Member extends BaseEntity {
     private String id;
     private String pwd;
     private String birth;
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    public List<Board> boardList;
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    public List<Reply> replyList;
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    public List<Board> boardList;
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    public List<Reply> replyList;
 }

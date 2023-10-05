@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 public class ReplyRepositoryTests {
     @Autowired
     private ReplyRepository replyRepository;
-
+//test
     @Test
     public void insertdummies(){
         IntStream.rangeClosed(1,300).forEach(i ->{
